@@ -23,5 +23,6 @@
 hs_err_pid*
 
 
-sample/.idea
-sample/*.iml
+**/.idea
+**/*.iml
+**/target

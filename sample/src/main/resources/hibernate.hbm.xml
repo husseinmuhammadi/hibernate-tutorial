@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="model">
+
+    <class name="SkilledUser" table="SKILLED_USER" dynamic-insert="true">
+        <id name="id" type="long">
+            <column name="ID"/>
+            <generator class="native"/>
+        </id>
+
+        <property name="name" type="string">
+            <column name="USER_NAME"/>
+        </property>
+
+        <property name="skill" type="converter.EnhancedUserTypeForSkill">
+            <column name="SKILL"/>
+        </property>
+
+        <property name="mandatory" type="java.lang.String">
+            <column name="MCOL" not-null="true"/>
+        </property>
+    </class>
+
+</hibernate-mapping>

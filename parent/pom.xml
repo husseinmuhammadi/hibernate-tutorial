@@ -15,7 +15,7 @@
 
     <modules>
         <module>../ojdbc-installer</module>
-        <module>../sample</module>
+        <module>../simple-hibernate</module>
         <!--<module>../ojdbc-oracle-repository</module>-->
     </modules>
 </project>

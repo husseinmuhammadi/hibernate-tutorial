@@ -5,17 +5,24 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.javastudio.tutorial</groupId>
-    <artifactId>hibernate-tutorial-parent</artifactId>
+    <artifactId>hibernate-tutorial</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
 
-    <name>Hibernate Tutorial Parent</name>
+    <name>Hibernate Tutorial</name>
     <description>Hibernate tutorial parent module for manage modules in the project</description>
 
     <modules>
-        <module>../ojdbc-installer</module>
-        <module>../simple-hibernate</module>
+        <!--<module>../ojdbc-installer</module>-->
+
+        <module>../repository-routes</module>
+
         <!--<module>../ojdbc-oracle-repository</module>-->
+
+        <module>../simple-hibernate</module>
+
+
+        <!--<module>../web-with-ojdbc</module>-->
     </modules>
 </project>

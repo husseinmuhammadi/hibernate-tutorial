@@ -16,9 +16,9 @@
     <modules>
         <!--<module>../ojdbc-installer</module>-->
 
-        <module>../repository-routes</module>
+        <!--<module>../repository-routes</module>-->
 
-        <!--<module>../ojdbc-oracle-repository</module>-->
+        <module>../ojdbc-oracle-repository</module>
 
         <module>../simple-hibernate</module>
 

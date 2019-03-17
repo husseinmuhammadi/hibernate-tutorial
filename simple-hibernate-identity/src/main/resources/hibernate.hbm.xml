@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.javastudio.tutorial.model.entity">
+
+    <class name="Person" table="PERSON" dynamic-insert="true">
+
+        <id name="id" type="long">
+            <column name="ID"/>
+            <generator class="native"/>
+        </id>
+
+        <property name="name" type="string">
+            <column name="NAME"/>
+        </property>
+    </class>
+
+    <class name="Role" table="ROLE" dynamic-insert="true">
+
+        <id name="id" type="long">
+            <column name="ID"/>
+            <generator class="native"/>
+        </id>
+
+        <property name="name" type="string">
+            <column name="NAME"/>
+        </property>
+    </class>
+
+    <class name="Opportunity" table="OPPORTUNITY">
+        <id name="id" type="long">
+            <column name="ID"/>
+            <generator class="sequence-identity">
+                <param name="sequence">SEQ_OPPORTUNITY</param>
+                <param name="parameters">INCREMENT BY 1 MAXVALUE 9999999999999999999999999999 MINVALUE 1 CACHE 2</param>
+            </generator>
+        </id>
+
+        <property name="opportunityName" type="string">
+            <column name="OPPORTUNITY_NAME"/>
+        </property>
+    </class>
+
+</hibernate-mapping>

@@ -21,7 +21,7 @@
         <!--<module>../ojdbc-oracle-repository</module>-->
 
         <module>../simple-hibernate</module>
-
+        <module>../simple-hibernate-identity</module>
 
         <!--<module>../web-with-ojdbc</module>-->
     </modules>

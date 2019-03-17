@@ -14,11 +14,11 @@
     <description>Hibernate tutorial parent module for manage modules in the project</description>
 
     <modules>
-        <!--<module>../ojdbc-installer</module>-->
+        <module>../ojdbc-installer</module>
 
         <!--<module>../repository-routes</module>-->
 
-        <module>../ojdbc-oracle-repository</module>
+        <!--<module>../ojdbc-oracle-repository</module>-->
 
         <module>../simple-hibernate</module>
 

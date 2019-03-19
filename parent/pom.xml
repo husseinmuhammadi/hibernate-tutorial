@@ -22,6 +22,7 @@
 
         <module>../simple-hibernate</module>
         <module>../simple-hibernate-identity</module>
+        <module>../simple-hibernate-polymorphism</module>
 
         <!--<module>../web-with-ojdbc</module>-->
     </modules>

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.javastudio.tutorial.model.entity">
+
+    <class name="CashPayment" table="CASH_PAYMENT" dynamic-insert="true">
+
+        <id name="paymentId" type="long">
+            <column name="ID"/>
+            <generator class="sequence-identity">
+                <param name="sequence">SEQ_CASH_PAYMENT</param>
+                <param name="parameters">INCREMENT BY 1 MAXVALUE 9999999999999999999999999999 MINVALUE 1 CACHE 20
+                </param>
+            </generator>
+        </id>
+
+        <property name="payerName" type="string">
+            <column name="PAYER_NAME"/>
+        </property>
+
+        <property name="paymentAmount" type="long">
+            <column name="PAYMENT_AMOUNT"/>
+        </property>
+
+        <property name="paymentCurrency" type="string">
+            <column name="PAYMENT_CURRENCY"/>
+        </property>
+
+    </class>
+
+    <class name="CardPayment" table="CARD_PAYMENT">
+
+        <id name="paymentId" type="long">
+            <column name="ID"/>
+            <generator class="sequence-identity">
+                <param name="sequence">SEQ_CARD_PAYMENT</param>
+                <param name="parameters">INCREMENT BY 1 MAXVALUE 9999999999999999999999999999 MINVALUE 1 CACHE 20
+                </param>
+            </generator>
+        </id>
+
+        <property name="payingAccountNumber" type="string">
+            <column name="PAYING_ACCOUNT_NUMBER"/>
+        </property>
+
+        <property name="paymentCurrency" type="string">
+            <column name="PAYMENT_CURRENCY"/>
+        </property>
+
+        <property name="paymentAmount">
+            <column name="PAYMENT_AMOUNT"/>
+        </property>
+
+        <property name="transferringBankName">
+            <column name="TRANSFERRING_BANK_NAME"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

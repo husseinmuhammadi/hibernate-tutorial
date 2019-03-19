@@ -2,10 +2,15 @@ package com.javastudio.tutorial;
 
 import com.javastudio.tutorial.model.entity.CardPayment;
 import com.javastudio.tutorial.model.entity.CashPayment;
+import com.javastudio.tutorial.model.entity.Payment;
+import com.javastudio.tutorial.model.repository.DataMgr;
 import com.javastudio.tutorial.service.CardPaymentService;
 import com.javastudio.tutorial.service.CashPaymentService;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 public class Main {
 
@@ -37,5 +42,23 @@ public class Main {
 
         cashPaymentService.list();
         cardPaymentService.list();
+
+        logger.info("-----------------------------------------------------");
+        Session session = null;
+        try {
+            session = DataMgr.openSession();
+            List<Payment> list = session.createCriteria(Payment.class).list();
+
+            for (Payment o : list) {
+                logger.info(String.format("|%15s|%15d|%15d", o.getClass().getSimpleName(), o.getPaymentId(), o.getPaymentAmount()), o.getPaymentCurrency());
+                logger.info(String.format("%s", o.getPaymentCurrency()));
+            }
+        } catch (Throwable e) {
+            logger.error("Error while getting list of objects", e);
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
     }
 }

@@ -4,10 +4,10 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:oracle:thin:@172.20.35.172:1521:dbebk</property>
+        <property name="connection.url">jdbc:oracle:thin:@10.10.10.13:1521:orcl</property>
         <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
 
-        <property name="connection.username">Hossein</property>
+        <property name="connection.username">db01</property>
         <property name="connection.password">123456</property>
 
         <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>

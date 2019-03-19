@@ -5,14 +5,15 @@
 
 <hibernate-mapping package="com.javastudio.tutorial.model.entity">
 
-    <class name="CashPayment" table="CASH_PAYMENT" dynamic-insert="true">
+    <class name="CashPayment" table="CASH_PAYMENT">
 
         <id name="paymentId" type="long">
             <column name="ID"/>
             <generator class="sequence-identity">
                 <param name="sequence">SEQ_CASH_PAYMENT</param>
-                <param name="parameters">INCREMENT BY 1 MAXVALUE 9999999999999999999999999999 MINVALUE 1 CACHE 20
-                </param>
+                <!--<param name="parameters">-->
+                    <!--INCREMENT BY 1 MAXVALUE 9999999999999999999999999999 MINVALUE 1 CACHE 20-->
+                <!--</param>-->
             </generator>
         </id>
 
@@ -36,8 +37,9 @@
             <column name="ID"/>
             <generator class="sequence-identity">
                 <param name="sequence">SEQ_CARD_PAYMENT</param>
-                <param name="parameters">INCREMENT BY 1 MAXVALUE 9999999999999999999999999999 MINVALUE 1 CACHE 20
-                </param>
+                <!--<param name="parameters">-->
+                    <!--INCREMENT BY 1 MAXVALUE 9999999999999999999999999999 MINVALUE 1 CACHE 20-->
+                <!--</param>-->
             </generator>
         </id>
 

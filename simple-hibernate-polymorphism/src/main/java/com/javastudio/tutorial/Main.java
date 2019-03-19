@@ -49,9 +49,9 @@ public class Main {
             session = DataMgr.openSession();
             List<Payment> list = session.createCriteria(Payment.class).list();
 
+            logger.info(String.format("|%-15s|%-6s|%-15s|%-10s|", "Class", "ID", "Amount", "Currency"));
             for (Payment o : list) {
-                logger.info(String.format("|%15s|%15d|%15d", o.getClass().getSimpleName(), o.getPaymentId(), o.getPaymentAmount()), o.getPaymentCurrency());
-                logger.info(String.format("%s", o.getPaymentCurrency()));
+                logger.info(String.format("|%-15s|%6d|%15d|%10s|", o.getClass().getSimpleName(), o.getPaymentId(), o.getPaymentAmount(), o.getPaymentCurrency()));
             }
         } catch (Throwable e) {
             logger.error("Error while getting list of objects", e);

@@ -26,10 +26,10 @@ public abstract class GenericService<T> {
             session.getTransaction().commit();
         } catch (Throwable e) {
             logger.error("Error while saving object", e);
+            session.getTransaction().rollback();
         } finally {
-            if (session != null) {
+            if (session != null)
                 session.close();
-            }
         }
     }
 
@@ -40,10 +40,10 @@ public abstract class GenericService<T> {
             return session.createCriteria(tClass).list();
         } catch (Throwable e) {
             logger.error("Error while getting list of objects", e);
+            session.getTransaction().rollback();
         } finally {
-            if (session != null) {
+            if (session != null)
                 session.close();
-            }
         }
         return null;
     }

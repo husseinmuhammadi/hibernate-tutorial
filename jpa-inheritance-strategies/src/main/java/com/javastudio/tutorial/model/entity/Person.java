@@ -1,17 +1,17 @@
 package com.javastudio.tutorial.model.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
-@Table(name = "PERSON")
-public class Person {
+//@Table(name = "PERSON")
+@DiscriminatorValue("P")
+@NamedQueries({
+@NamedQuery(name = Person.FIND_ALL, query = "from Person")
+})
+public class Person extends StateSupport {
 
-    @Id
-    @Column(name = "ID")
-    long id;
+    public static final String FIND_ALL = "Persin.findAll";
 
     @Column(name = "FIRST_NAME")
     String firstName;
@@ -19,13 +19,8 @@ public class Person {
     @Column(name = "LAST_NAME")
     String lastName;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
+    @Temporal(TemporalType.DATE)
+    Date birthdate;
 
     public String getFirstName() {
         return firstName;
@@ -41,5 +36,13 @@ public class Person {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
     }
 }

@@ -2,6 +2,7 @@ package com.javastudio.tutorial.model.base;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.FlushModeType;
 import javax.persistence.Persistence;
 
 public class JPA {
@@ -16,6 +17,8 @@ public class JPA {
     }
 
     public static EntityManager getEntityManager() {
-        return factory.createEntityManager();
+        EntityManager entityManager = factory.createEntityManager();
+        entityManager.setFlushMode(FlushModeType.COMMIT);
+        return entityManager;
     }
 }

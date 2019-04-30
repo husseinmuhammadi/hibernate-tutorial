@@ -31,6 +31,7 @@ public class HibernateSample {
         try {
             session = DataMgr.openSession();
             // List<Person> list = session.createCriteria(Person.class).list();
+            session.beginTransaction();
 
             Address address = new Address();
             address.setContactType("addr");
@@ -43,11 +44,14 @@ public class HibernateSample {
             session.persist(address);
             session.persist(telephone);
 
-            Person person = new Person();
+            Person person = new Person("Hossein", "Mohammadi");
             person.setContact(address);
-
-            session.beginTransaction();
             session.persist(person);
+
+            Person person1 = new Person("Mostafa", "Soltani");
+            person1.setContact(telephone);
+            session.persist(person1);
+
             session.getTransaction().commit();
 
         } catch (Throwable e) {

@@ -5,7 +5,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PERSON")
+@Table(name = "ADDRESS")
 @SequenceGenerator(name = "SEQUENCE_GENERATOR", sequenceName = "ADDRESS_SEQ")
 public class Address extends EntityBase implements Contact {
 

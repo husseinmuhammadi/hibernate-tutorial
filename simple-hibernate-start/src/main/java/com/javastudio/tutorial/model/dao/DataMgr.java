@@ -2,6 +2,7 @@ package com.javastudio.tutorial.model.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.mapping.Column;
 import org.hibernate.mapping.PersistentClass;
@@ -24,9 +25,9 @@ public class DataMgr {
         try {
             // A SessionFactory is set up once for an application!
             configuration = new Configuration().configure("hibernate.cfg.xml");
-            ServiceRegistry serviceRegistry = new ServiceRegistryBuilder()
+            ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties())
-                    .buildServiceRegistry();
+                    .build();
             factory = configuration.buildSessionFactory(serviceRegistry);
         } catch (Throwable e) {
             logger.error("Error initializing hibernate", e);

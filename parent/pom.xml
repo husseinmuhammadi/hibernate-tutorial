@@ -14,11 +14,11 @@
     <description>Hibernate tutorial parent module for manage modules in the project</description>
 
     <modules>
-        <!--<module>../ojdbc-installer</module>-->
+        <module>../ojdbc-installer</module>
         <!--<module>../repository-routes</module>-->
-        <module>../ojdbc-oracle-repository</module>
+        <!--<module>../ojdbc-oracle-repository</module>-->
 
-        <!--<module>../simple-hibernate</module>-->
+        <module>../simple-hibernate</module>
         <!--<module>../simple-hibernate-identity</module>-->
         <!--<module>../simple-hibernate-polymorphism</module>-->
         <!--<module>../simple-hibernate-polymorphism-2</module>-->
@@ -26,6 +26,6 @@
         <!--<module>../web-with-ojdbc</module>-->
 
         <module>../jpa-introduction</module>
-        <module>../jpa-inheritance-strategies</module>
+        <!--<module>../jpa-inheritance-strategies</module>-->
     </modules>
 </project>

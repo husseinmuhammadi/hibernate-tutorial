@@ -11,9 +11,7 @@
     <packaging>pom</packaging>
 
     <name>OJDBC Oracle Maven Repository</name>
-    <description>
-        Get Oracle JDBC drivers and UCP from Oracle Maven Repository
-    </description>
+    <description>Get Oracle JDBC drivers and UCP from Oracle Maven Repository</description>
 
     <dependencies>
         <dependency>

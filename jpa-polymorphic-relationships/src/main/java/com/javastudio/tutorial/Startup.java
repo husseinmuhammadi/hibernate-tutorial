@@ -21,7 +21,7 @@ public class Startup {
     public static void main(String[] args) {
         logger.info("Start ...");
 
-        savePersons();
+        saveProducts();
         saveVehicle();
         findVehicles();
 
@@ -49,7 +49,7 @@ public class Startup {
         vehicleService.save(vehicle1);
     }
 
-    private static void savePersons() {
+    private static void saveProducts() {
         for (int i = 0; i < 2; i++) {
             Product product = new Product();
             product.setTitle("Computer");

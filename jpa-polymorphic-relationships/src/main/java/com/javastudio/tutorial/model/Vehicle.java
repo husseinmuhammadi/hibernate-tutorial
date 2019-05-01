@@ -15,15 +15,9 @@ public class Vehicle {
     long id;
 
     @Any(
+            metaDef = "VehicleMetaDef",
             metaColumn = @Column(name = "owner_type", length = 1),
             fetch = FetchType.EAGER
-    )
-    @AnyMetaDef(
-            idType = "long", metaType = "string",
-            metaValues = {
-                    @MetaValue(targetEntity = Person.class, value = "P"),
-                    @MetaValue(targetEntity = Company.class, value = "C")
-            }
     )
     @JoinColumn(name = "owner_id")
     VehicleOwner owner;

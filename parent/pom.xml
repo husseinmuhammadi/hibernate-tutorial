@@ -18,6 +18,7 @@
         <!--<module>../repository-routes</module>-->
         <!--<module>../ojdbc-oracle-repository</module>-->
 
+        <module>../simple-hibernate-start</module>
         <!--<module>../simple-hibernate</module>-->
         <!--<module>../simple-hibernate-identity</module>-->
         <!--<module>../simple-hibernate-polymorphism</module>-->
@@ -27,6 +28,6 @@
 
         <!--<module>../jpa-introduction</module>-->
         <!--<module>../jpa-inheritance-strategies</module>-->
-        <module>../jpa-polymorphic-relationships</module>
+        <!--<module>../jpa-polymorphic-relationships</module>-->
     </modules>
 </project>

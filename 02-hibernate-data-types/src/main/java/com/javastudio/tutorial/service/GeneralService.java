@@ -4,8 +4,11 @@ import com.javastudio.tutorial.dao.HibernateSessionProvider;
 import com.javastudio.tutorial.model.EntityBase;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class GeneralService {
+    Logger logger = LoggerFactory.getLogger(GeneralService.class);
 
     public void save(EntityBase entity) {
         Transaction tx = null;
@@ -17,6 +20,7 @@ public class GeneralService {
             session.save(entity);
             tx.commit();
         } catch (Throwable e) {
+            logger.error("Error saving transaction", e);
             if (tx != null) tx.rollback();
         } finally {
             if (session.isOpen()) session.close();

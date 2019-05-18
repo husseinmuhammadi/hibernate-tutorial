@@ -16,8 +16,13 @@ public class AppletInfo extends EntityBase {
     @Column(name = "APPLICATION_LABEL", nullable = false, length = 16)
     String applicationLabel;
 
-    Byte applicationPriorityIndicator;
+    @Column(name = "APPLICATION_PRIORITY_INDICATOR")
+    Integer applicationPriorityIndicator;
 
+    // Issuer Code Table Index
+
+
+    // region Getter & Setter
     public String getApplicationLabel() {
         return applicationLabel;
     }
@@ -25,5 +30,14 @@ public class AppletInfo extends EntityBase {
     public void setApplicationLabel(String applicationLabel) {
         this.applicationLabel = applicationLabel;
     }
+
+    public Integer getApplicationPriorityIndicator() {
+        return applicationPriorityIndicator;
+    }
+
+    public void setApplicationPriorityIndicator(Integer applicationPriorityIndicator) {
+        this.applicationPriorityIndicator = applicationPriorityIndicator;
+    }
+    // endregion Getter & Setter
 }
 

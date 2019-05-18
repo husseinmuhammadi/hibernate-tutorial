@@ -1,5 +1,6 @@
 package com.javastudio.tutorial.dao;
 
+import com.javastudio.tutorial.model.AppletInfo;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,7 +12,9 @@ public class HibernateSessionProvider {
 
     static {
         try {
-            Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
+            Configuration cfg = new Configuration()
+                    .addAnnotatedClass(AppletInfo.class)
+                    .configure("hibernate.cfg.xml");
             SESSION_FACTORY = cfg.buildSessionFactory();
         } catch (Throwable e) {
             throw new ExceptionInInitializerError(e);

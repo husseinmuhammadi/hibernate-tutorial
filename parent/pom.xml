@@ -15,19 +15,18 @@
 
     <modules>
         <module>../ojdbc-installer</module>
-
-        <module>../02-hibernate-data-types</module>
-
         <!--<module>../repository-routes</module>-->
         <!--<module>../ojdbc-oracle-repository</module>-->
+        <!--<module>../web-with-ojdbc</module>-->
+
+        <module>../00-easy-jdbc</module>
+        <!--<module>../02-hibernate-data-types</module>-->
 
         <!--<module>../simple-hibernate-start</module>-->
-        <module>../simple-hibernate</module>
+        <!--<module>../simple-hibernate</module>-->
         <!--<module>../simple-hibernate-identity</module>-->
         <!--<module>../simple-hibernate-polymorphism</module>-->
         <!--<module>../simple-hibernate-polymorphism-2</module>-->
-
-        <!--<module>../web-with-ojdbc</module>-->
 
         <!--<module>../jpa-introduction</module>-->
         <!--<module>../jpa-inheritance-strategies</module>-->

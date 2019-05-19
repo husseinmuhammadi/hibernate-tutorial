@@ -22,7 +22,7 @@
         <!--<module>../ojdbc-oracle-repository</module>-->
 
         <!--<module>../simple-hibernate-start</module>-->
-        <!--<module>../simple-hibernate</module>-->
+        <module>../simple-hibernate</module>
         <!--<module>../simple-hibernate-identity</module>-->
         <!--<module>../simple-hibernate-polymorphism</module>-->
         <!--<module>../simple-hibernate-polymorphism-2</module>-->

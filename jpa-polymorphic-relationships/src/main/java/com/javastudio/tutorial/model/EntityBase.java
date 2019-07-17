@@ -9,7 +9,8 @@ public abstract class EntityBase {
     @GeneratedValue(generator = "SEQ_GEN", strategy = GenerationType.SEQUENCE)
     Long id;
 
-    String status;
+    @Column(name = "status", nullable = false)
+    private String status;
 
     @Embedded
     private Audit audit;

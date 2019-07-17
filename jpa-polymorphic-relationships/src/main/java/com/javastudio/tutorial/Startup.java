@@ -1,11 +1,17 @@
 package com.javastudio.tutorial;
 
+import com.google.common.reflect.ClassPath;
 import com.javastudio.tutorial.model.*;
 import com.javastudio.tutorial.service.*;
+import org.hibernate.annotations.AnyMetaDef;
+import org.hibernate.annotations.AnyMetaDefs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class Startup {
     static Logger logger = LoggerFactory.getLogger(Startup.class);
@@ -17,6 +23,7 @@ public class Startup {
     static TaskService taskService = new TaskService();
     static IssueService issueService = new IssueService();
     static EntityHistoryService entityHistoryService = new EntityHistoryService();
+    static EntityCapableStateService entityCapableStateService = new EntityCapableStateService();
 
     public static void main(String[] args) {
         logger.info("Start ...");
@@ -25,18 +32,53 @@ public class Startup {
 //        saveVehicle();
 //        findVehicles();
 
-        saveIssue();
-        saveTask();
-        findAllEntityHistory();
-
+//        saveIssue();
+//        saveTask();
+//        findAllEntityHistory();
+//
 //        findEntityCapableState();
+
+        try {
+            ClassPath classPath = ClassPath.from(Issue.class.getClassLoader());
+            AnyMetaDefs anyMetaDefs = classPath.getTopLevelClassesRecursive("com.javastudio.tutorial.model")
+                    .stream().filter(c -> c.getSimpleName().equals("package-info"))
+                    .map(c -> c.load().getPackage().getAnnotation(AnyMetaDefs.class))
+                    .collect(toSingleton());
+                    // .forEach(a -> System.out.println(a.toString()));
+            AnyMetaDef[] c = anyMetaDefs.value();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
 
         logger.info("End ...");
     }
 
+    public static <T> Collector<T, ?, T> toSingleton() {
+        return Collectors.collectingAndThen(
+                Collectors.toList(),
+                list -> {
+                    if (list.size() != 1) {
+                        throw new IllegalStateException();
+                    }
+                    return list.get(0);
+                }
+        );
+    }
+
+
+
+
+
+
+
+
+
+
     private static void findEntityCapableState() {
 
-        // List<EntityCapableState> entityCapableStates =
+        List<EntityCapableState> entityCapableStates = entityCapableStateService.findEntityCapableStates(Issue.class);
 
     }
 

@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class GeneralService<T> {
+public abstract class GeneralService {
 
     Logger logger = LoggerFactory.getLogger(GeneralService.class);
 

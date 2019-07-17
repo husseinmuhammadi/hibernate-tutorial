@@ -1,9 +1,11 @@
 @AnyMetaDefs(
         @AnyMetaDef(
-                name = "VehicleMetaDef", idType = "long", metaType = "string",
+                name = "EntityMetaDef", idType = "long", metaType = "string",
                 metaValues = {
                         @MetaValue(targetEntity = Person.class, value = "P"),
-                        @MetaValue(targetEntity = Company.class, value = "C")
+                        @MetaValue(targetEntity = Company.class, value = "C"),
+                        @MetaValue(targetEntity = Issue.class, value = "I"),
+                        @MetaValue(targetEntity = Task.class, value = "T"),
                 }
         )
 )

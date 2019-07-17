@@ -1,10 +1,7 @@
 package com.javastudio.tutorial;
 
 import com.javastudio.tutorial.model.*;
-import com.javastudio.tutorial.service.CompanyService;
-import com.javastudio.tutorial.service.PersonService;
-import com.javastudio.tutorial.service.ProductService;
-import com.javastudio.tutorial.service.VehicleService;
+import com.javastudio.tutorial.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,13 +14,20 @@ public class Startup {
     static VehicleService vehicleService = new VehicleService();
     static PersonService personService = new PersonService();
     static CompanyService companyService = new CompanyService();
+    static TaskService taskService = new TaskService();
+    static IssueService issueService = new IssueService();
+    static EntityHistoryService entityHistoryService = new EntityHistoryService();
 
     public static void main(String[] args) {
         logger.info("Start ...");
 
-        saveProducts();
-        saveVehicle();
-        findVehicles();
+//        saveProducts();
+//        saveVehicle();
+//        findVehicles();
+
+        saveIssue();
+        saveTask();
+        findAllEntityHistory();
 
         logger.info("End ...");
     }
@@ -56,4 +60,44 @@ public class Startup {
             productService.save(product);
         }
     }
+
+    private static void saveIssue() {
+        Issue issue = new Issue();
+        issue.setTitle("#14566");
+        issue.setStatus("E");
+        issueService.save(issue);
+
+        EntityHistory entityHistory = new EntityHistory();
+        entityHistory.setEntity(issue);
+        entityHistory.setAction("Create new entity");
+        entityHistory.setUsername("h.mohammadi");
+        entityHistoryService.save(entityHistory);
+    }
+
+    private static void saveTask() {
+        Task task = new Task();
+        task.setTitle("Create a new module SSM");
+        task.setStatus("E");
+        taskService.save(task);
+
+        EntityHistory entityHistory = new EntityHistory();
+        entityHistory.setEntity(task);
+        entityHistory.setAction("Create new task");
+        entityHistory.setUsername("h.mohammadi");
+        entityHistoryService.save(entityHistory);
+    }
+
+    private static void findAllEntityHistory() {
+        List<EntityHistory> entityHistories = entityHistoryService.findAllEntityHistory();
+        for (EntityHistory history : entityHistories) {
+            EntityBase entity = (EntityBase) history.getEntity();
+            System.out.println(
+                    String.format("%s %d %s by %s",
+                            entity.getClass().getSimpleName(), entity.getId(), history.getAction(), history.getUsername()
+                    )
+            );
+        }
+    }
+
+
 }

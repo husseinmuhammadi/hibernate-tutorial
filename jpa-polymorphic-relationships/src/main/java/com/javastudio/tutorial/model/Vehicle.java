@@ -15,7 +15,7 @@ public class Vehicle {
     long id;
 
     @Any(
-            metaDef = "VehicleMetaDef",
+            metaDef = "EntityMetaDef",
             metaColumn = @Column(name = "owner_type", length = 1),
             fetch = FetchType.EAGER
     )

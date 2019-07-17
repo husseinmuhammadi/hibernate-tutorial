@@ -1,17 +1,22 @@
 package com.javastudio.tutorial.model;
 
-import org.hibernate.annotations.MetaValue;
+import com.javastudio.tutorial.model.listener.AuditListener;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.SequenceGenerator;
 
 @Entity
 @SequenceGenerator(name = "SEQ_GEN", sequenceName = "Issue_SEQ")
-public class Issue extends EntityBase implements History {
+@EntityListeners(AuditListener.class)
+public class Issue extends EntityBase implements Auditable {
 
     String title;
 
-    String status;
+
+    @Embedded
+    private Audit audit;
 
     public String getTitle() {
         return title;
@@ -22,11 +27,12 @@ public class Issue extends EntityBase implements History {
     }
 
     @Override
-    public String getStatus() {
-        return status;
+    public Audit getAudit() {
+        return audit;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    @Override
+    public void setAudit(Audit audit) {
+        this.audit = audit;
     }
 }

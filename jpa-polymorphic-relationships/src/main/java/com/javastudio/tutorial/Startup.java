@@ -29,7 +29,15 @@ public class Startup {
         saveTask();
         findAllEntityHistory();
 
+//        findEntityCapableState();
+
         logger.info("End ...");
+    }
+
+    private static void findEntityCapableState() {
+
+        // List<EntityCapableState> entityCapableStates =
+
     }
 
     private static void findVehicles() {

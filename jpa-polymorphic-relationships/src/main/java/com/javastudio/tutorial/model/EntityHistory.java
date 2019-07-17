@@ -14,7 +14,7 @@ public class EntityHistory extends EntityBase {
             metaColumn = @Column(name = "entity_name")
     )
     @JoinColumn(name = "ENTITY_ID")
-    History entity;
+    Auditable entity;
 
     String username;
 
@@ -36,11 +36,11 @@ public class EntityHistory extends EntityBase {
         this.action = action;
     }
 
-    public History getEntity() {
+    public Auditable getEntity() {
         return entity;
     }
 
-    public void setEntity(History entity) {
+    public void setEntity(Auditable entity) {
         this.entity = entity;
     }
 }

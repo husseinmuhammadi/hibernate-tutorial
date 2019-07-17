@@ -6,8 +6,13 @@ import org.slf4j.LoggerFactory;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
+import java.text.MessageFormat;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Set;
 
-public abstract class GeneralService {
+public abstract class GeneralService<T> {
 
     Logger logger = LoggerFactory.getLogger(GeneralService.class);
 

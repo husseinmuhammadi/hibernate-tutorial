@@ -2,7 +2,6 @@ package com.javastudio.tutorial.service;
 
 import com.javastudio.tutorial.dao.EntityManagerProvider;
 import com.javastudio.tutorial.model.EntityHistory;
-import com.javastudio.tutorial.model.Issue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

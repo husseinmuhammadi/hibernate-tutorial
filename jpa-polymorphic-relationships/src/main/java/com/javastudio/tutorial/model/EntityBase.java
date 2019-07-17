@@ -1,9 +1,6 @@
 package com.javastudio.tutorial.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
 @MappedSuperclass
 public abstract class EntityBase {
@@ -13,6 +10,9 @@ public abstract class EntityBase {
     Long id;
 
     String status;
+
+    @Embedded
+    private Audit audit;
 
     public Long getId() {
         return id;
@@ -29,5 +29,13 @@ public abstract class EntityBase {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Audit getAudit() {
+        return audit;
+    }
+
+    public void setAudit(Audit audit) {
+        this.audit = audit;
     }
 }

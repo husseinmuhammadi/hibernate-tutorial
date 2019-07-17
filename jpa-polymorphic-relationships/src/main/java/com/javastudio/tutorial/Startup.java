@@ -75,8 +75,14 @@ public class Startup {
         issue.setStatus("E");
         issueService.save(issue);
 
+        saveHistory(issue);
+    }
+
+    private static void saveHistory(Auditable auditable) {
         EntityHistory entityHistory = new EntityHistory();
-        entityHistory.setEntity(issue);
+        entityHistory.setEntity(auditable);
+        entityHistory.setStatus(auditable.getStatus());
+        entityHistory.setAudit(auditable.getAudit());
         entityHistory.setAction("Create new entity");
         entityHistory.setUsername("h.mohammadi");
         entityHistoryService.save(entityHistory);
@@ -88,11 +94,7 @@ public class Startup {
         task.setStatus("E");
         taskService.save(task);
 
-        EntityHistory entityHistory = new EntityHistory();
-        entityHistory.setEntity(task);
-        entityHistory.setAction("Create new task");
-        entityHistory.setUsername("h.mohammadi");
-        entityHistoryService.save(entityHistory);
+        saveHistory(task);
     }
 
     private static void findAllEntityHistory() {

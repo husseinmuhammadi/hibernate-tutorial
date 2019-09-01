@@ -21,6 +21,7 @@
 
         <!--<module>../00-easy-jdbc</module>-->
         <!--<module>../02-hibernate-data-types</module>-->
+        <module>../03-hibernate-date-timestamp</module>
 
         <!--<module>../simple-hibernate-start</module>-->
         <!--<module>../simple-hibernate</module>-->
@@ -30,6 +31,6 @@
 
         <!--<module>../jpa-introduction</module>-->
         <!--<module>../jpa-inheritance-strategies</module>-->
-        <module>../jpa-polymorphic-relationships</module>
+        <!--<module>../jpa-polymorphic-relationships</module>-->
     </modules>
 </project>

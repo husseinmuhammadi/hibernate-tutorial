@@ -2,7 +2,6 @@ package com.javastudio.tutorial.model;
 
 import com.javastudio.tutorial.model.listener.AuditListener;
 
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.SequenceGenerator;

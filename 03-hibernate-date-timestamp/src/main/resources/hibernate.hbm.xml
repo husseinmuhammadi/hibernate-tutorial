@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.javastudio.tutorial.model">
+
+    <class name="SampleWithoutAnnotation" table="SAMPLE_WITHOUT_ANNOTATION">
+        <meta attribute="class-description">
+            Mapping for the SAMPLE_WITHOUT_ANNOTATION Table.
+        </meta>
+        <id name="id" type="long" column="id" >
+
+        </id>
+        <property name="cardNumber" type="string" column="CARD_NUMBER"/>
+        <property name="transactionDate" type="date" column="TRANSACTION_DATE"/>
+        <property name="transactionAmount" type="double" column="TRANSACTION_AMOUNT"/>
+    </class>
+
+
+</hibernate-mapping>

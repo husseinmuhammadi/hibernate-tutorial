@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo:4.4.4
+    container_name: tutorial-mongo
+    ports:
+      - 57017:27017
+  postgres:
+    image: postgres:13.2
+    container_name: tutorial-postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 55432:5432

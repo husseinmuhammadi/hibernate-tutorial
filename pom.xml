@@ -23,9 +23,9 @@
     </properties>
 
     <modules>
-        <!--        <module>../ojdbc-installer</module>-->
-                <module>../repository-routes</module>
-        <module>../ojdbc-oracle-repository</module>
+        <module>ojdbc-installer</module>
+        <!--                <module>../repository-routes</module>-->
+        <!--        <module>../ojdbc-oracle-repository</module>-->
         <!--<module>../web-with-ojdbc</module>-->
 
         <!--<module>../00-easy-jdbc</module>-->

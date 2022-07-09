@@ -17,7 +17,7 @@
     <description>Introduction to JPA</description>
 
     <properties>
-        <postgresql.version>42.2.19</postgresql.version>
+        <postgresql.version>42.3.3</postgresql.version>
     </properties>
 
     <build>

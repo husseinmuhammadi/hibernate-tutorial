@@ -15,9 +15,5 @@
 
     <modules>
         <module>driver/ojdbc-installer</module>
-
-
-        <module>oracle-repository-route</module>
-        <module>jpos</module>
     </modules>
 </project>

@@ -55,10 +55,9 @@
         <module>jdbc</module>
         <module>hibernate</module>
         <module>jpa</module>
-        <!--        <module>../ojdbc-oracle-repository</module>-->
         <!--<module>../web-with-ojdbc</module>-->
 
-        <!--<module>../00-easy-jdbc</module>-->
+        <module>00-easy-jdbc</module>
         <!--<module>../02-hibernate-data-types</module>-->
         <!--<module>../03-hibernate-date-timestamp</module>-->
 

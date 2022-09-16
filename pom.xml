@@ -52,8 +52,9 @@
     </properties>
 
     <modules>
-        <module>ojdbc-installer</module>
-        <module>repository-routes</module>
+        <module>jdbc</module>
+        <module>hibernate</module>
+        <module>jpa</module>
         <!--        <module>../ojdbc-oracle-repository</module>-->
         <!--<module>../web-with-ojdbc</module>-->
 

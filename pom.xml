@@ -57,7 +57,6 @@
         <module>jpa</module>
         <!--<module>../web-with-ojdbc</module>-->
 
-        <module>00-easy-jdbc</module>
         <!--<module>../02-hibernate-data-types</module>-->
         <!--<module>../03-hibernate-date-timestamp</module>-->
 
@@ -67,7 +66,6 @@
         <!--<module>../simple-hibernate-polymorphism</module>-->
         <!--<module>../simple-hibernate-polymorphism-2</module>-->
 
-        <!--<module>../jpa-introduction</module>-->
         <!--<module>../jpa-many-to-one</module>-->
 
         <!--<module>../jpa-inheritance-strategies</module>-->

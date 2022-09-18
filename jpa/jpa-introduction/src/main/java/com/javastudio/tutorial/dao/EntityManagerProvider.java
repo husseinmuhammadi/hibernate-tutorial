@@ -2,18 +2,21 @@ package com.javastudio.tutorial.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.FlushModeType;
 import javax.persistence.Persistence;
 
-public class EntityManagerProvider {
+public enum EntityManagerProvider {
+    PRIMARY_PERSISTENCE_UNIT("primary-persistence-unit");
 
-    final static EntityManagerFactory ENTITY_MANAGER_FACTORY;
+    private final EntityManagerFactory entityManagerFactory;
 
-    static {
-        ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory("primary");
+    EntityManagerProvider(String persistenceUnitName) {
+        this.entityManagerFactory = Persistence.createEntityManagerFactory(persistenceUnitName);
     }
 
-    public static EntityManager getEntityManager(){
-        return ENTITY_MANAGER_FACTORY.createEntityManager();
+    public synchronized EntityManager getEntityManager() {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        entityManager.setFlushMode(FlushModeType.COMMIT);
+        return entityManager;
     }
-
 }

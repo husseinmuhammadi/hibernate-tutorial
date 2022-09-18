@@ -66,7 +66,6 @@
         <!--<module>../simple-hibernate-polymorphism</module>-->
         <!--<module>../simple-hibernate-polymorphism-2</module>-->
 
-        <!--<module>../jpa-many-to-one</module>-->
 
         <!--<module>../jpa-inheritance-strategies</module>-->
         <!--<module>../jpa-polymorphic-relationships</module>-->
@@ -119,6 +118,12 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>${logback.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

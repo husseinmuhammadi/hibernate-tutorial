@@ -15,5 +15,6 @@
 
     <modules>
         <module>jpa-introduction</module>
+        <module>jpa-many-to-one</module>
     </modules>
 </project>

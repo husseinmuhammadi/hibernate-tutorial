@@ -10,15 +10,13 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>jpa-many-to-one</artifactId>
+    <artifactId>jpa-relationship-mapping</artifactId>
 
-    <name>JPA Relationship</name>
-    <description>Introduction to JPA relationship</description>
+    <name>JPA Relationship Mapping</name>
+    <description>Introduction to JPA relationship mapping</description>
 
     <properties>
-        <postgresql.version>42.4.1</postgresql.version>
-
-        <main-class>com.javastudio.tutorial.Startup</main-class>
+        <main-class>com.javastudio.tutorial.Application</main-class>
     </properties>
 
     <build>
@@ -28,16 +26,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
-
-                        </manifest>
-                    </archive>
-                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -46,7 +34,6 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
         </dependency>
 
         <dependency>

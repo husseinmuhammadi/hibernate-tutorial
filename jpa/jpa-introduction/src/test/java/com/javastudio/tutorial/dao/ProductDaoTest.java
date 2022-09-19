@@ -1,13 +1,10 @@
 package com.javastudio.tutorial.dao;
 
 import com.javastudio.tutorial.model.Product;
-import jdk.jfr.Threshold;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;

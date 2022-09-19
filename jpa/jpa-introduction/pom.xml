@@ -16,7 +16,6 @@
     <description>Introduction to JPA</description>
 
     <properties>
-        <postgresql.version>42.4.1</postgresql.version>
         <main-class>com.javastudio.tutorial.Startup</main-class>
     </properties>
 

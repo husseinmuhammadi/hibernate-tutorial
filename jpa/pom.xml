@@ -22,4 +22,11 @@
         <module>jpa-many-to-one</module>
         <module>jpa-inheritance-strategies</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 </project>

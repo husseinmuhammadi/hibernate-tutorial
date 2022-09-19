@@ -20,7 +20,7 @@
     </properties>
 
     <build>
-        <finalName>jpa-inheritance-strategies</finalName>
+        <finalName>demo</finalName>
 
         <plugins>
             <plugin>

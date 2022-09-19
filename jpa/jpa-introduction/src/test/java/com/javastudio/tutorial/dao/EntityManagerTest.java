@@ -14,7 +14,7 @@ public class EntityManagerTest {
 
     @BeforeAll
     static void beforeAll() {
-        emf = Persistence.createEntityManagerFactory("persistenceUnitName");
+        emf = Persistence.createEntityManagerFactory("primary-persistence-unit");
         assertNotNull(emf);
     }
 

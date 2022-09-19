@@ -10,17 +10,17 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>jpa-introduction</artifactId>
+    <artifactId>jpa-relationship-mapping</artifactId>
 
-    <name>JPA Introduction</name>
-    <description>Introduction to JPA</description>
+    <name>JPA Relationship Mapping</name>
+    <description>Introduction to JPA relationship mapping</description>
 
     <properties>
-        <main-class>com.javastudio.tutorial.Startup</main-class>
+        <main-class>com.javastudio.tutorial.Application</main-class>
     </properties>
 
     <build>
-        <finalName>jpa-introduction</finalName>
+        <finalName>demo</finalName>
 
         <plugins>
             <plugin>
@@ -34,7 +34,6 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>

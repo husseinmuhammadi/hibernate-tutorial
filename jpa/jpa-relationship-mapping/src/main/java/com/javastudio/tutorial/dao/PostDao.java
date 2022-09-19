@@ -11,6 +11,6 @@ public class PostDao extends GenericDao<Post> {
 
     @Override
     protected List<Post> findAll() {
-        return null;
+        return getEntityManager().createQuery("select p from Post p", Post.class).getResultList();
     }
 }

@@ -19,7 +19,25 @@ class PostDaoTest {
 
     @Test
     void savePostWithComments() {
-        
+        postDao.begin();
+        postDao.save(buildPostWithComments());
+        postDao.commit();
+    }
+
+    @Test
+    void givenOrphanRemoval_shouldRemoveComments_whenDeletePost() {
+        postDao.begin();
+        postDao.save(buildPostWithComments());
+        postDao.save(buildPostWithComments());
+        postDao.getEntityManager().flush();
+        postDao.findAll().forEach(post -> {
+            System.out.printf("Deleting post id:%d%n", post.getId());
+            postDao.getEntityManager().remove(post);
+        });
+        postDao.commit();
+    }
+
+    private Post buildPostWithComments(){
         Post post = Post.builder()
                 .title("I like programming")
                 .description("Programming are enjoyable")
@@ -29,10 +47,7 @@ class PostDaoTest {
                         Comment.builder().text("I found it great").build()
                 )).build();
         post.getComments().forEach(comment -> comment.setPost(post));
-
-        postDao.begin();
-        postDao.save(post);
-        postDao.commit();
+        return post;
     }
 
 }

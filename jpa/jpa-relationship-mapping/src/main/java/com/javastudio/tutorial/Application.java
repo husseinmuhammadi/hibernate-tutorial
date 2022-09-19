@@ -1,7 +1,5 @@
 package com.javastudio.tutorial;
 
-import com.javastudio.tutorial.model.Product;
-import com.javastudio.tutorial.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

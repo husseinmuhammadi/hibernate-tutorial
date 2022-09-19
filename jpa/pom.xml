@@ -13,8 +13,13 @@
     <artifactId>jpa-tutorial</artifactId>
     <packaging>pom</packaging>
 
+    <properties>
+        <postgresql.version>42.4.1</postgresql.version>
+    </properties>
+
     <modules>
         <module>jpa-introduction</module>
         <module>jpa-many-to-one</module>
+        <module>jpa-inheritance-strategies</module>
     </modules>
 </project>

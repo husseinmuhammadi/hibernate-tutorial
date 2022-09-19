@@ -19,7 +19,7 @@
 
     <modules>
         <module>jpa-introduction</module>
-        <module>jpa-many-to-one</module>
+<!--        <module>jpa-many-to-one</module>-->
         <module>jpa-inheritance-strategies</module>
     </modules>
 

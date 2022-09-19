@@ -16,4 +16,7 @@ public class Account {
     private Long id;
 
     private String accountNumber;
+
+    @ManyToOne
+    private Customer customer;
 }

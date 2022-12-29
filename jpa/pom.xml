@@ -21,6 +21,7 @@
         <module>jpa-introduction</module>
         <module>jpa-relationship-mapping</module>
         <module>jpa-inheritance-strategies</module>
+        <module>jpa-inheritance-strategies-discriminator</module>
     </modules>
 
     <dependencies>

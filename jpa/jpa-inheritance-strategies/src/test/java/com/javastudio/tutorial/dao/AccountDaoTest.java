@@ -34,6 +34,20 @@ class AccountDaoTest {
 
     @Test
     void findAllAccounts(){
-        accountDao.findAll();
+        PaymentAccount paymentAccount = new PaymentAccount();
+        paymentAccount.setAccountNumber(UUID.randomUUID().toString());
+
+        SavingAccount savingAccount = new SavingAccount();
+        savingAccount.setAccountNumber(UUID.randomUUID().toString());
+
+        accountDao.begin();
+        accountDao.save(paymentAccount);
+        accountDao.save(savingAccount);
+        accountDao.flush();
+        accountDao.commit();
+
+//        accountDao.findAll().forEach(account -> System.out.println(account.getClass().getName()));
+        accountDao.createQuery("select a from PaymentAccount a").getResultList()
+                .forEach(account -> System.out.println(account.getClass().getName()));
     }
 }

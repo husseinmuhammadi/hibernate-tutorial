@@ -1,7 +1,6 @@
 package com.javastudio.tutorial.dao;
 
 import com.javastudio.tutorial.entity.Account;
-import com.javastudio.tutorial.entity.PaymentAccount;
 
 import java.util.List;
 
